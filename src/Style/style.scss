@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;500&display=swap');
+$homePage_Color: #FAF0E6;
+$navbar_Color: #A39193;
+$footer_Color: #66545D;
+$roomContainer_Color:#AA6F73;
+@mixin d-flex ($dir,
+$place,
+$align) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: $align;
+    justify-content: $place;
+}
+
+:root {
+    --menu-animation: slideright;
+}
+
+.Home__Container {
+    background-color: $homePage_Color;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    .Homenav_Container {
+        @include d-flex(row-reverse,
+        space-between,
+        center);
+        h1 {
+            font-size: 5vw;
+            font-weight: 400;
+            padding: 10px;
+            position: relative;
+            left: -30vw;
+            @media screen and (max-width: 390px) {
+                font-size: 25px;
+                left: -15vw;
+            }
+        }
+        img {
+            width: 90px;
+            height: 85px;
+            margin-left: 50px;
+            cursor: pointer;
+            @media screen and (max-width: 768px) {
+                width: 10vw;
+                height: 9vw;
+                margin-left: 30px;
+            }
+            &:hover {
+                transform: translateY(-10px);
+            }
+            transition: transform 0.5s;
+        }
+    }
+    hr {
+        width: 80%;
+        border: none;
+        height: 2px;
+        background-color: black;
+    }
+    .menu_Container {
+        width: max-content;
+        height: 70vh;
+        background-color: $navbar_Color;
+        list-style: none;
+        position: fixed;
+        top: -15px;
+        left: 0;
+        color: $homePage_Color;
+        li {
+            padding: 50px;
+            margin-left: -50px;
+            cursor: pointer;
+            user-select: none;
+            img {
+                width: 70px;
+                height: 70px;
+            }
+            &:hover {
+                transform: translateY(-10px);
+            }
+            transition: transform 0.5s;
+            @media screen and (max-width:768px) {
+                padding: 30px;
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+        animation: slideright .5s ease-in;
+        @media screen and (max-width:500px) {
+            height: 50vh;
+            li {
+                padding: 20px;
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+        @media screen and (max-width:375px) {
+            height: 40vh;
+            li {
+                padding: 10px;
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+//animation
+@keyframes slideright {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes slideleft {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: -200px;
+    }
+}
