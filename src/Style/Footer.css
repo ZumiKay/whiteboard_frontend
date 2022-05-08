@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;500&display=swap');
+.Footer_Container {
+    margin-top: 100px;
+    width: 100%;
+    height: 20vh;
+    background-color: #66545D;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #FAF0E6;
+    font-size: 500;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.Footer_Container .Logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 100px;
+}
+
+.Footer_Container .Logo h3 {
+    margin-top: -10px;
+    font-size: 10px;
+}
+
+.Footer_Container .footer_page {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    color: #FAF0E6;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer_Container .footer_page .link1,
+.link2 {
+    width: fit-content;
+    color: #FAF0E6;
+    text-decoration: none;
+    font-size: 20px;
+    transition: .5s;
+}
+
+.Footer_Container .footer_page .link1 {
+    margin-bottom: 10px;
+}
+
+.Footer_Container .footer_page .link1:hover,
+.link2:hover {
+    color: black;
+}
+
+.Footer_Container .Creator {
+    text-align: right;
+    padding-right: 100px;
+    padding-top: 40px;
+}
+
+@media screen and (max-width:795px) {
+    .Footer_Container {
+        grid-template-columns: auto auto;
+        height: auto;
+    }
+    .Footer_Container .Creator {
+        padding-top: 0;
+        padding-right: 0;
+        text-align: left;
+        padding-left: 100px;
+    }
+    .Footer_Container .footer_page {
+        padding-top: 15px;
+    }
+}
+
+@media screen and (max-width:690px) {
+    .Footer_Container {
+        grid-template-columns: auto auto;
+    }
+    .Footer_Container .Logo {
+        padding-left: 80px;
+    }
+    .Footer_Container .Creator {
+        padding-left: 80px;
+    }
+    .Footer_Container .footer_page {
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width:390px) {
+    .Footer_Container {
+        grid-template-columns: auto;
+    }
+    .Footer_Container .Logo {
+        margin-bottom: 50px;
+    }
+    .Footer_Container .footer_page {
+        align-items: flex-start;
+        padding-left: 80px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width:321px) {
+    .Footer_Container .Logo {
+        padding-left: 30px;
+    }
+    .Footer_Container .footer_page {
+        padding-left: 30px;
+    }
+    .Footer_Container .Creator {
+        padding-left: 30px;
+    }
+}

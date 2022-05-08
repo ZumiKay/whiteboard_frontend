@@ -3,11 +3,14 @@
   --menu-animation: slideright;
 }
 
+* {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .Home__Container {
   background-color: #FAF0E6;
   width: 100%;
   min-height: 100vh;
-  font-family: 'Josefin Sans', sans-serif;
   text-align: center;
 }
 
@@ -43,9 +46,11 @@
 }
 
 .Home__Container .Homenav_Container img {
+  position: fixed;
+  z-index: 2;
   width: 90px;
   height: 85px;
-  margin-left: 50px;
+  left: 30px;
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
@@ -57,7 +62,14 @@
   .Home__Container .Homenav_Container img {
     width: 10vw;
     height: 9vw;
-    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .Home__Container .Homenav_Container img {
+    width: 30px;
+    height: 30px;
+    left: -1px;
   }
 }
 
@@ -84,8 +96,9 @@
   top: -15px;
   left: 0;
   color: #FAF0E6;
-  -webkit-animation: slideright .5s ease-in;
-          animation: slideright .5s ease-in;
+  z-index: 10;
+  -webkit-animation: var(--menu-animation) 0.5s ease-in-out;
+          animation: var(--menu-animation) 0.5s ease-in-out;
 }
 
 .Home__Container .menu_Container li {
@@ -110,6 +123,10 @@
 .Home__Container .menu_Container li:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
+}
+
+.Home__Container .menu_Container li:active {
+  color: #66545D;
 }
 
 @media screen and (max-width: 768px) {
@@ -148,6 +165,123 @@
   }
 }
 
+.Home__Container .Rooms {
+  margin: 100px 0 0 14vw;
+  width: 80%;
+  height: 800px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  overflow-y: scroll;
+  grid-row-gap: 50px;
+}
+
+.Home__Container .Rooms .Rooms_Container {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 300px;
+  height: 400px;
+  background-color: #AA6F73;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.Home__Container .Rooms .Rooms_Container h1 {
+  font-size: 50px;
+}
+
+.Home__Container .Rooms .Rooms_Container h1,
+.Home__Container .Rooms .Rooms_Container h3,
+.Home__Container .Rooms .Rooms_Container h4 {
+  font-weight: 400;
+}
+
+.Home__Container .Rooms .Rooms_Container:hover {
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
+}
+
+.Home__Container .Rooms .Rooms_Container:active {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+@media screen and (max-width: 795px) {
+  .Home__Container .Rooms .Rooms_Container {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .Home__Container .Rooms .Rooms_Container {
+    width: 200px;
+    height: 300px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Home__Container .Rooms {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .Home__Container .Rooms {
+    margin-left: 11vw;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .Home__Container .Rooms {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    place-content: center;
+    padding-top: 100px;
+    margin-left: 10vw;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .Home__Container .Rooms {
+    padding-right: 20px;
+  }
+}
+
+.Home__Container .Roomsort__Container {
+  position: relative;
+  left: -30vw;
+  border: 2px solid #66545D;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 660px) {
+  .Home__Container .Roomsort__Container {
+    left: -20vw;
+  }
+}
+
 @-webkit-keyframes slideright {
   0% {
     left: -200px;
@@ -182,5 +316,17 @@
   100% {
     left: -200px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #FAF0E6;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #AA6F73;
 }
 /*# sourceMappingURL=style.css.map */
